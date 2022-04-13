@@ -1,9 +1,8 @@
 import fs from "fs";
 import path from "path";
-import { createFileSync, sendResponse, shieldApi } from "./utils.js";
+import { createFileSync, sendResponse } from "./utils.js";
 
-import { env, shield, internals } from "node-blox-sdk";
-
+import { env } from "node-blox-sdk";
 env.init();
 
 /**
