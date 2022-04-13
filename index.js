@@ -2,6 +2,10 @@ import fs from "fs";
 import path from "path";
 import { createFileSync, sendResponse, shieldApi } from "./utils.js";
 
+import { env, shield, internals } from "node-blox-sdk";
+
+env.init();
+
 /**
  * List candidates request hanlder
  * @param {*} req
@@ -13,9 +17,9 @@ const listCandidates = (req, res) => {
     createFileSync(DB_FILE);
     const data = fs.readFileSync(DB_FILE, { encoding: "utf8", flag: "r" });
     const resData = JSON.parse(data || "[]");
-    sendResponse(res, 200, { status: true, data: resData });
+    sendResponse(res, 200, { status: true, data: resData, env: process.env });
   } catch (e) {
-    sendResponse(res, 500, { status: false, msg: e.message, err: e });
+    sendResponse(res, 500, { status: false, msg: e.message, err: e , env: process.env});
   }
 };
 export default { listCandidates };
