@@ -16,7 +16,7 @@ const listCandidates = (req, res) => {
     createFileSync(DB_FILE);
     const data = fs.readFileSync(DB_FILE, { encoding: "utf8", flag: "r" });
     const resData = JSON.parse(data || "[]");
-    sendResponse(res, 200, { status: true, data: resData, TEST_ENV: process.env.TEST });
+    sendResponse(res, 200, { status: true, data: resData, ENV: process.env });
   } catch (e) {
     sendResponse(res, 500, { status: false, msg: e.message, err: e });
   }
