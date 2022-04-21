@@ -12,6 +12,14 @@ env.init();
  */
 const listCandidates = (req, res) => {
   try {
+
+    if (req.params["health"] === "health") {
+      return sendResponse(res, 200, {
+        success: true,
+        msg: "Health check success",
+      });
+    }
+
     const DB_FILE = path.resolve("../localdb.json");
     createFileSync(DB_FILE);
     const data = fs.readFileSync(DB_FILE, { encoding: "utf8", flag: "r" });
@@ -21,4 +29,4 @@ const listCandidates = (req, res) => {
     sendResponse(res, 500, { status: false, msg: e.message, err: e });
   }
 };
-export default { listCandidates };
+export default listCandidates;
