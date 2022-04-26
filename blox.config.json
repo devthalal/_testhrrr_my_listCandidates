@@ -1,1 +1,1 @@
-{"name":"listCandidates","type":"function","source":{"https":"https://github.com/devthalal/_hiringApp_listCandidates","ssh":"git@github.com:devthalal/_hiringApp_listCandidates.git"},"language":"nodejs","start":"npm run start","build":"npm run build","postPull":"npm i"}
+{"name":"my_listCandidates","type":"function","source":{"https":"https://github.com/devthalal/_testhrrr_my_listCandidates","ssh":"git@github.com:devthalal/_testhrrr_my_listCandidates.git"},"language":"nodejs","start":"npm run start","build":"npm run build","postPull":"npm i"}
